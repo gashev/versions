@@ -12,7 +12,7 @@ def versions(package_name):
 
     url = "https://pypi.python.org/pypi/%s/json" % (package_name)
     data = json.loads(requests.get(url).text)
-    versions = data["releases"].keys()
+    versions = list(data["releases"].keys())
     versions.sort(key = LooseVersion)
 
     return versions
