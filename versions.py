@@ -25,7 +25,7 @@ def main():
     try:
         print("\n".join(versions(sys.argv[1])))
     except Exception as e:
-        sys.stderr.write("Error: %s\n" % (e.message))
+        sys.stderr.write("Error: %s\n" % (format(e)))
         return 1
 
     return 0
